@@ -3,6 +3,7 @@ import ContactBook from "../views/ContactBook.vue";
 
 import NotFound from "../views/NotFound.vue";
 import ContactEdit from "../views/ContactEdit.vue";
+import ContactCreate from "../views/ContactCreate.vue";
 
 const routes = [
   {
@@ -11,11 +12,17 @@ const routes = [
     component: ContactBook,
   },
   {
+    path: "/contacts",
+    name: "contact.add",
+    component: ContactCreate,
+  },
+  {
     path: "/contacts/:id",
     name: "contact.edit",
     component: ContactEdit,
     props: true, // Truyền các biến trong $route.params vào làm props
   },
+
   {
     path: "/:pathMatch(.*)*",
     name: "notfound",

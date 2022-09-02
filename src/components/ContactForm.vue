@@ -86,6 +86,7 @@ export default {
         .max(50, "Tên có nhiều nhất 50 ký tự."),
       email: yup
         .string()
+        .required("Email phải có giá trị.")
         .email("E-mail không đúng.")
         .max(50, "E-mail tối đa 50 ký tự."),
       address: yup.string().max(100, "Địa chỉ tối đa 100 ký tự."),
@@ -106,12 +107,10 @@ export default {
       this.$emit("submit:contact", this.contactLocal);
     },
     deleteContact() {
-      this.$emit("delete:contact", this.contactLocal.id);
+      this.$emit("delete:contact");
     },
   },
 };
 </script>
 
-<style scoped>
-@import "../assets/form.css";
-</style>
+<style scoped></style>
